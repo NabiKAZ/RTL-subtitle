@@ -1,12 +1,9 @@
-# This script solves the problem of formatting subtitles in right-to-left languages, making them compatible with video editing software 
-#  like FFmpeg. By adding the RLE character at the beginning of each text line while preserving the timestamps, it ensures that 
-#  the subtitles display correctly in the intended right-to-left direction when overlaid on video content. This formatting is crucial 
-#  for maintaining the legibility and visual integrity of subtitles in languages that use a right-to-left writing system.
-# Add the UTF-16 encoding character 0x202B (RLE) (which represents the "RIGHT-TO-LEFT EMBEDDING" control character) only to the lines 
-#  containing text and not to the timestamp lines in your SRT file.
-# Make sure to replace 'sample_subtitle.srt' with the path to your input SRT file and 'output_subtitle.srt' with the desired 
-#  output file path.
+# Right-to-left subtitles by adding the RLE character to each sentence. Doing this is required 
+#  when integrating subtitles by video editors such as ffmpeg. 
+# Make sure to replace 'sample_subtitle.srt' with the path to your input SRT file and 
+#  'output_subtitle.srt' with the desired output file path.
 # By https://twitter.com/NabiKAZ
+# Source: https://github.com/NabiKAZ/RTL-subtitle
 # MIT License
 
 def add_rle_to_paragraphs(srt_content, rle_char):
