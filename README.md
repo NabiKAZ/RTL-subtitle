@@ -4,10 +4,9 @@ This script solves the problem of formatting subtitles in right-to-left language
 The UTF-16 encoding character `0x202B` (`RLE`) (which stands for the "RIGHT-TO-LEFT EMBEDDING" control character) is only added to text-containing lines and not to timestamp lines in your `SRT` file.
 
 ## Usage
-Make sure to replace `sample_subtitle.srt` with the path to your input SRT file and `output_subtitle.srt` with the desired output file path.
-Then just run:
+To convert `input_subtitle.srt` to `output_subtitle.srt`, run:
 ```
-python rtl-subtitle.py
+python rtl-subtitle.py input_subtitle.srt output_subtitle.srt
 ```
 
 ## FFmpeg

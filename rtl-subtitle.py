@@ -26,8 +26,13 @@ def add_rle_to_paragraphs(srt_content, rle_char):
     return '\n\n'.join(modified_paragraphs)
 
 def main():
-    input_file = 'sample_subtitle.srt'
-    output_file = 'output_subtitle.srt'
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("infile")
+    parser.add_argument("outfile")
+    args = parser.parse_args()
+    input_file = args.infile
+    output_file = args.outfile
     rle_char = '\u202B'  # Use the UTF-16 encoding character.
 
     with open(input_file, 'r', encoding='utf-8') as file:
@@ -43,3 +48,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
